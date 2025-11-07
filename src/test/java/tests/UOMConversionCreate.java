@@ -61,4 +61,53 @@ public class UOMConversionCreate {
         Assert.assertEquals(uomConversionCreatePage.getErrorTargetUOMFieldMessage(),"This field is required");
         Assert.assertEquals(uomConversionCreatePage.getErrorConversionRateField(),"This field is required");
     }
+
+    @Test
+    public void cuc_003 () throws InterruptedException {
+        uomConversionCreatePage.clickTargetUOMDropDownButton();
+        uomConversionCreatePage.clickGamOptionDropDownListTargetUOM();
+        Thread.sleep(1000);
+
+        uomConversionCreatePage.enterConversionRateField("1");
+        Thread.sleep(1000);
+
+        uomConversionCreatePage.clickCreateUOMButton();
+        Thread.sleep(3000);
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://tryi-ui-dev.diqit.io/admin/uom-conversion/create");
+        Assert.assertEquals(uomConversionCreatePage.getErrorBaseUOMFieldMessage(),"This field is required");
+    }
+
+    @Test
+    public void cuc_004 () throws InterruptedException {
+        uomConversionCreatePage.clickBaseUOMDropDownButton();
+        uomConversionCreatePage.clickKilogramOptionDropDownListBaseUOM();
+        Thread.sleep(1000);
+
+        uomConversionCreatePage.enterConversionRateField("1");
+        Thread.sleep(1000);
+
+        uomConversionCreatePage.clickCreateUOMButton();
+        Thread.sleep(3000);
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://tryi-ui-dev.diqit.io/admin/uom-conversion/create");
+        Assert.assertEquals(uomConversionCreatePage.getErrorBaseUOMFieldMessage(),"This field is required");
+    }
+
+    @Test
+    public void cuc_005 () throws InterruptedException {
+        uomConversionCreatePage.clickBaseUOMDropDownButton();
+        uomConversionCreatePage.clickKilogramOptionDropDownListBaseUOM();
+        Thread.sleep(2000);
+
+        uomConversionCreatePage.clickTargetUOMDropDownButton();
+        uomConversionCreatePage.clickGamOptionDropDownListTargetUOM();
+        Thread.sleep(2000);
+
+        uomConversionCreatePage.clickCreateUOMButton();
+        Thread.sleep(3000);
+
+        Assert.assertEquals(driver.getCurrentUrl(), "https://tryi-ui-dev.diqit.io/admin/uom-conversion/create");
+        Assert.assertEquals(uomConversionCreatePage.getErrorConversionRateField(), "This field is required");
+    }
 }

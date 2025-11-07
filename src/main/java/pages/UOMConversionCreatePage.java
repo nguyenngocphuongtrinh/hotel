@@ -16,7 +16,7 @@ public class UOMConversionCreatePage extends BasePage {
     @FindBy (xpath = "//div[@class='flex-1 line-clamp-1' and normalize-space()='kg']")
     private WebElement kilogramOptionDropDownListBaseUOM;
 
-    @FindBy (xpath = "//*[@id=\":ru:-form-item-message\"]")
+    @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/main/form/div/div[2]/div/div/div[2]/div/div[1]/div/p")
     private WebElement errorBaseUOMFieldMessage;
 
     @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/main/form/div/div[2]/div/div/div[2]/div/div[2]/div/div/button")
@@ -25,13 +25,13 @@ public class UOMConversionCreatePage extends BasePage {
     @FindBy (xpath = "//div[@role='dialog']//div[@class='flex-1 line-clamp-1' and normalize-space()='g']")
     private WebElement gamOptionDropDownListTargetUOM;
 
-    @FindBy (xpath = "//*[@id=\":r10:-form-item-message\"]")
+    @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/main/form/div/div[2]/div/div/div[2]/div/div[2]/div/p")
     private WebElement errorTargetUOMFieldMessage;
 
     @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/main/form/div/div[2]/div/div/div[2]/div/div[3]/div/div/input")
     private WebElement conversionRateField;
 
-    @FindBy (xpath = "//*[@id=\":r12:-form-item-message\"]")
+    @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/main/form/div/div[2]/div/div/div[2]/div/div[3]/div/p")
     private WebElement errorConversionRateFieldMessage;
 
     @FindBy (xpath = "//*[@id=\"root\"]/div/main/div/main/form/div/div[1]/div/div[2]/button")
